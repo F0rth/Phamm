@@ -170,7 +170,7 @@ define ('PHAMM_LOG',0);
 // Log file path
 define ('LOG_FILE','/var/log/phamm.log');
 
-// Standard LDAP encryption type [CRYPT,MD5,SSHA,CLEAR]
+// Standard LDAP encryption type [CRYPT,MD5,CLEAR]
 define ('ENC_TYPE','CRYPT');
 
 // Permit login without @domain (use it with carefull)

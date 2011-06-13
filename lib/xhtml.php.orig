@@ -675,13 +675,10 @@ function form_add_domain_2 ($domain_new, $action, $values, $values_postmaster)
     $tag .= '<td colspan="2"><b>'.$domain_new.'</b></td></tr>'."\n";
 
     $tag .= '<tr><td>'._("Password").'</td>'."\n";
-    $tag .= '<td colspan="2"><input type="password" id="password1" name="password1" value="" size="15" maxlength="15" /></td></tr>'."\n";
+    $tag .= '<td colspan="2"><input type="password" name="password1" value="" size="15" maxlength="15" /></td></tr>'."\n";
 
     $tag .= '<tr><td>'._("Confirm Password").'</td>'."\n";
-    $tag .= '<td colspan="2"><input type="password" id="password2" name="password2" value="" size="15" maxlength="15" /></td></tr>'."\n";
-
-    $tag .= '<tr><td><input type="button" id="button_generate_password" value="Generate Password" onclick="suggestPassword()" /></td>'."\n";
-    $tag .= '<td colspan="2"><input type="text" name="generated_pw" id="generated_pw" /></td></tr>' . "\n";
+    $tag .= '<td colspan="2"><input type="password" name="password2" value="" size="15" maxlength="15" /></td></tr>'."\n";
     
     foreach ($pv as $name => $p_value)
     {
@@ -767,13 +764,10 @@ function form_add_account_2 ($account_new,$action,$values)
     $tag .= '<td colspan="2"><b>'.$account_new.'</b></td></tr>'."\n";
 
     $tag .= '<tr><td>'._("Password").'</td>'."\n";
-    $tag .= '<td colspan="2"><input type="password" id="password1" name="password1" value="" size="15" maxlength="15" /></td></tr>'."\n";
+    $tag .= '<td colspan="2"><input type="password" name="password1" value="" size="15" maxlength="15" /></td></tr>'."\n";
 
     $tag .= '<tr><td>'._("Confirm Password").'</td>'."\n";
-    $tag .= '<td colspan="2"><input type="password" id="password2" name="password2" value="" size="15" maxlength="15" /></td></tr>'."\n";
-
-    $tag .= '<tr><td><input type="button" id="button_generate_password" value="Generate" onclick="suggestPassword()" /></td>'."\n";
-    $tag .= '<td colspan="2"><input type="text" name="generated_pw" id="generated_pw" /></td></tr>' . "\n";
+    $tag .= '<td colspan="2"><input type="password" name="password2" value="" size="15" maxlength="15" /></td></tr>'."\n";
 
     $tag .= '<tr><td>'._("Name").'</td>'."\n";
     $tag .= '<td colspan="2"><input type="text" name="givenname" value="'.stripslashes($givenName).'" size="15" maxlength="50" /></td></tr>'."\n";

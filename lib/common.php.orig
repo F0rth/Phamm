@@ -300,7 +300,7 @@ function wrong_pw ($password1,$password2,$length=PASSWORD_MIN_LENGHT)
 *
 * @param string $password_clear The password to hash in clear text.
 * @constant string $enc_type Standard LDAP encryption type which must be one of
-*          crypt, md5, ssha or clear.
+*          crypt, md5 or clear.
 * @return string The hashed password.
 */
 
@@ -320,14 +320,6 @@ function password_hash($password_clear)
 	for ( $i = 0; $i < 32; $i += 2 )
 	    $password_hash .= chr( hexdec( $md5_hash{ $i + 1 } ) + hexdec( $md5_hash{ $i } ) * 16 );
 	$password_hash = '{MD5}'.base64_encode($password_hash);
-        break;
-
-    case 'ssha';
-        $password_hash = '';
-        for ($i=1;$i<=10;$i++) {
-                $salt .= substr('0123456789abcdef',rand(0,15),1);
-        }
-        $password_hash = "{SSHA}".base64_encode(pack("H*",sha1($password_clear.$salt)).$salt);
         break;
 
     case 'clear':

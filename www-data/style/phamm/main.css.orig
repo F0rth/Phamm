@@ -100,21 +100,6 @@ input[type="submit"]:hover
     background-color: #f2ffb8;
 }
 
-input[type="button"]
-{
-    border-style: outset;
-    border-width: 1px;
-    color: #42516c;
-    background-color: #ffffff;
-    font-size: 1em;
-}
-
-input[type="button"]:hover
-{
-    color: #450604;
-    background-color: #f2ffb8;
-}
-
 input:focus
 {
     background-color: #ffffaa;
