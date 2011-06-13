@@ -1,0 +1,25 @@
+dn: cn=config
+changetype: modify
+delete: olcAuthzRegexp
+
+dn: olcDatabase={-1}frontend,cn=config
+changetype: modify
+delete: olcAccess
+
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+delete: olcRootDN
+
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+add: olcRootDN
+olcRootDN: cn=admin,cn=config
+
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+add: olcRootPW
+olcRootPW: {MD5}Gnmk1g3mcY6OWzJuM4rlMw==
+
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+delete: olcAccess
