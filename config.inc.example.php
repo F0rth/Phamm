@@ -171,7 +171,7 @@ define ('PHAMM_LOG',0);
 define ('LOG_FILE','/var/log/phamm.log');
 
 // Standard LDAP encryption type [CRYPT,MD5,SSHA,CLEAR]
-define ('ENC_TYPE','CRYPT');
+define ('ENC_TYPE','SSHA');
 
 // Permit login without @domain (use it with carefull)
 // define ('DEFAULT_DOMAIN','example.tld');
