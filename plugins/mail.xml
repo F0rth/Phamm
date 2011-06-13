@@ -118,7 +118,7 @@
 				<table>1</table>
 				<default>50</default>
 				<multiplier>1048576</multiplier>
-				<suffix>S</suffix>
+				<suffix></suffix>
 				<minAuthLevel>4</minAuthLevel>
 			</attribute>
 			<attribute name="accountActive">
@@ -140,7 +140,7 @@
 				<prettyName>Mailbox</prettyName>
 				<hidden>1</hidden>
 				<required>1</required>
-				<default>=php.Value(%domain%,/,+account_new+,/)</default>
+				<default>=php.Value(%domain%,/,+account_new+,@,%domain%/)</default>
 				<minAuthLevel>4</minAuthLevel>
 			</attribute>
 			<attribute name="uid">

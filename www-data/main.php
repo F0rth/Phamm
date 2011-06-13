@@ -307,7 +307,7 @@ case "insert_domain" :
         $entry["sn"] = "Postmaster";
         $entry["mail"] = "postmaster@".$domain_new;
         $entry["userPassword"]  = password_hash($password1);
-        $entry["maildrop"] = "postmaster";
+        $entry["maildrop"] = "postmaster@".$domain_new;
         $entry["accountActive"]		= "TRUE";
         $entry["creationDate"]		= date('Ymd');
         $entry["lastChange"]		= time();
@@ -326,7 +326,7 @@ case "insert_domain" :
         $entry_abuse["cn"] = "Abuse";
         $entry_abuse["sn"] = "Abuse";
         $entry_abuse["mail"] = "abuse@".$domain_new;
-        $entry_abuse["maildrop"] = "postmaster";
+        $entry_abuse["maildrop"] = "postmaster@".domain_new;
         $entry_abuse["accountActive"] = "TRUE";
         $entry_abuse["creationDate"] = date('Ymd');
         $entry_abuse["lastChange"] = time();

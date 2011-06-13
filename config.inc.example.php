@@ -148,11 +148,11 @@ define ('REFRESH_TIME',1);
 define ('PHAMM_DOMAIN_ADMIN_NAME','postmaster');
 
 // Welcome message
-define ('SEND_WELCOME',0);
+define ('SEND_WELCOME',1);
 $welcome_msg = '../welcome_message.txt';
 $welcome_subject = 'Welcome!';
-# $welcome_sender = 'postmaster@localhost';
-# $welcome_bcc = 'postmaster@localhost';
+$welcome_sender = 'postmaster@%domain%';
+$welcome_bcc = 'postmaster@example.tld';
 
 // *============================*
 // *===  Advanced Settings   ===*
