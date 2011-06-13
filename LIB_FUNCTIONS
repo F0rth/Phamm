@@ -1,0 +1,71 @@
+****************************************
+../lib/common.php
+
+function refresh ($url, $force_meta = false, $seconds = 0)
+function xml2array ($file)
+function phamm_list ($base_dn,$filter,$attributes,$sort=null)
+function phamm_search ($base_dn,$filter,$attributes=null,$sort=null)
+function phamm_add ($dn,$entry)
+function phamm_modify ($dn,$entry)
+function wrong_pw ($password1,$password2,$length=PASSWORD_MIN_LENGHT)
+function password_hash($password_clear)
+function self_values ($dn, $filter="(cn=*)")
+function purge_empty_values ($data,$attribute=null)
+function phamm_mod_add ($dn,$entry)
+function phamm_mod_del ($dn,$entry)
+function phamm_ldap_delete($dn,$recursive=false)
+function phamm_error ()
+function check_syntax ($type,$arg,$length="0")
+function phamm_ldap_connect ()
+---------------------------------------------------------
+../lib/locale.php
+
+function locale_set($language)
+---------------------------------------------------------
+../lib/login.php
+
+function login_dn_costructor($login_username)
+function login_try($connect, $proposed, $login_password,$login_username)
+function bind_try($connect, $dn, $password)
+function login_check()
+function logout()
+---------------------------------------------------------
+../lib/phamm.php
+
+function phamm_date($date_format)
+function phamm_php_error_level ()
+function phamm_log ($pn,$user,$operation,$result)
+function phamm_set_var($name, $values=null, $methods=null, $level=0)
+function phamm_print_message ($class,$message,$newline=true)
+function phamm_print_xhtml ($tag)
+function group_actions ($command,$values)
+---------------------------------------------------------
+../lib/plugin.php
+
+function plugins_menu ()
+function plugins_load()
+---------------------------------------------------------
+../lib/xhtml.php
+
+function page_start()
+function page_end()
+function page_exit()
+function login_form()
+function style_set()
+function style_load($style)
+function domains_list($vds,$values)
+function accounts_list($domain,$values,$initial)
+function form_add_domain ()
+function form_template($p_name,$attributes,$myvalues,$skip_table=null)
+function form_add_domain_2 ($domain_new,$action)
+function form_add_account ()
+function form_add_account_2 ($account_new,$action)
+function navigation ($initial)
+function trueorfalse($table,$value,$field,$reverse)
+function action_select1($dispaly)
+function action_select($group_actions)
+function tof_icon($table,$value,$tof_action,$reverse=null,$cron=null)
+function date_input($name,$current_date,$format='ymd')
+function locale_select()
+function form_catch_all($domain)
+---------------------------------------------------------
