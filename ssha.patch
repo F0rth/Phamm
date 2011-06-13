@@ -1,0 +1,55 @@
+*** phamm-0.5.18/lib/common.php	2009-01-01 17:54:50.000000000 +0100
+--- net-perversia__phamm/lib/common.php	2010-04-12 19:42:36.000000000 +0200
+***************
+*** 300,306 ****
+  *
+  * @param string $password_clear The password to hash in clear text.
+  * @constant string $enc_type Standard LDAP encryption type which must be one of
+! *          crypt, md5 or clear.
+  * @return string The hashed password.
+  */
+  
+--- 300,306 ----
+  *
+  * @param string $password_clear The password to hash in clear text.
+  * @constant string $enc_type Standard LDAP encryption type which must be one of
+! *          crypt, md5, ssha or clear.
+  * @return string The hashed password.
+  */
+  
+***************
+*** 322,327 ****
+--- 322,335 ----
+  	$password_hash = '{MD5}'.base64_encode($password_hash);
+          break;
+  
++     case 'ssha';
++         $password_hash = '';
++         for ($i=1;$i<=10;$i++) {
++                 $salt .= substr('0123456789abcdef',rand(0,15),1);
++         }
++         $password_hash = "{SSHA}".base64_encode(pack("H*",sha1($password_clear.$salt)).$salt);
++         break;
++ 
+      case 'clear':
+          $password_hash = $password_clear;
+          break;
+*** phamm-0.5.18/config.inc.example.php	2010-03-31 10:43:59.000000000 +0200
+--- net-perversia__phamm/config.inc.example.php	2010-04-12 19:42:59.000000000 +0200
+***************
+*** 170,176 ****
+  // Log file path
+  define ('LOG_FILE','/var/log/phamm.log');
+  
+! // Standard LDAP encryption type [CRYPT,MD5,CLEAR]
+  define ('ENC_TYPE','CRYPT');
+  
+  // Permit login without @domain (use it with carefull)
+--- 170,176 ----
+  // Log file path
+  define ('LOG_FILE','/var/log/phamm.log');
+  
+! // Standard LDAP encryption type [CRYPT,MD5,SSHA,CLEAR]
+  define ('ENC_TYPE','CRYPT');
+  
+  // Permit login without @domain (use it with carefull)
