@@ -1,0 +1,30 @@
+# Load dynamic backend modules
+dn: cn=module{0},cn=config
+objectClass: olcModuleList
+cn: module
+olcModulepath: /usr/lib/ldap
+olcModuleload: {0}back_hdb
+
+# Create the database
+dn: olcDatabase={1}hdb,cn=config
+objectClass: olcDatabaseConfig
+objectClass: olcHdbConfig
+olcDatabase: {1}hdb
+olcDbDirectory: /var/lib/ldap
+olcSuffix: dc=example,dc=com
+olcRootDN: cn=admin,dc=example,dc=com
+olcRootPW: example
+olcDbConfig: {0}set_cachesize 0 2097152 0
+olcDbConfig: {1}set_lk_max_objects 1500
+olcDbConfig: {2}set_lk_max_locks 1500
+olcDbConfig: {3}set_lk_max_lockers 1500
+olcLastMod: TRUE
+olcDbCheckpoint: 512 30
+olcDbIndex: cn,mail,givenname eq,subinitial
+olcDbIndex: vd,delete eq,pres
+olcDbIndex: accountActive,forwardActive eq,pres
+olcDbIndex: smtpAuth eq,pres
+olcDbIndex: sn,displayName eq,pres,sub
+olcDbIndex: default sub
+olcDbIndex: uid eq,pres
+olcDbIndex: objectClass eq
