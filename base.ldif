@@ -1,0 +1,27 @@
+dn: dc=example,dc=tld
+objectClass: dcObject
+objectclass: organization
+o: example.tld
+dc: example
+description: My LDAP Root
+
+dn: cn=admin,dc=example,dc=tld
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+userPassword: {MD5}Gnmk1g3mcY6OWzJuM4rlMw==
+description: LDAP administrator
+
+dn: o=hosting,dc=example,dc=tld
+objectClass: organizationalUnit
+objectClass: top
+ou: domains
+description: Hosting Organization
+
+# Read only account
+dn: cn=phamm,o=hosting,dc=example,dc=tld
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: phamm
+userPassword: {MD5}M267sheb6qc0Ck8WIPOvQA==
+description: Read only account
